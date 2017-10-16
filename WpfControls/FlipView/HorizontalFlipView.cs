@@ -37,6 +37,8 @@ namespace WpfControls.FlipView
         private void OnRootManipulationCompleted(object sender, ManipulationCompletedEventArgs e)
         {
             this.fromValue = e.TotalManipulation.Translation.X;
+            if (fromValue == 0) return;
+
             if (this.fromValue > 0)
             {
                 if (this.SelectedIndex > 0)
